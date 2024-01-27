@@ -23,6 +23,11 @@ body {
   background: white;
   white-space: nowrap;
   position: relative;
+  max-width: 80%;
+  margin-top:5rem ;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
 }
 
 .logos:before,
@@ -48,10 +53,65 @@ body {
 
 .logos-slide {
   display: inline-block;
-  animation: 35s slide infinite linear;
+  animation: 5s slide infinite linear;
 }
 
 .logos-slide img {
+  height: 50px;
+  margin: 0 40px;
+}
+
+/* creating for the reverse */
+
+@keyframes slides {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.logos2 {
+  overflow: hidden;
+  padding: 60px 0;
+  background: white;
+  white-space: nowrap;
+  position: relative;
+  max-width: 80%;
+  margin-top:5rem ;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+}
+
+.logos2:before,
+.logos2:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.logos2:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+
+.logos2:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+
+.logos-slide2 {
+  display: inline-block;
+  animation: 5s slides infinite linear;
+}
+
+.logos-slide2 img {
   height: 50px;
   margin: 0 40px;
 }
